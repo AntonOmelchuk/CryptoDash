@@ -1,14 +1,28 @@
 import React from 'react';
 
-import {NavbarContainer} from './navbar.style';
+import {ControlButtonElement, Logo, NavbarContainer} from './navbar.style';
+
+const ControlButton = ({name}) => {
+
+    return (
+        <ControlButtonElement>
+            {toProperCase(name)}
+        </ControlButtonElement>
+    )
+};
+
+const toProperCase = name => {
+    return name.charAt(0).toUpperCase() + name.substr(1);
+};
 
 const Navbar = () => {
+
   return (
     <NavbarContainer>
-      <div>CryptoDash</div>
+      <Logo>CryptoDash</Logo>
       <div />
-      <div>Dashboard</div>
-      <div>Settings</div>
+      <ControlButton name='dashboard' />
+      <ControlButton name='settings' />
     </NavbarContainer>
   );
 };
