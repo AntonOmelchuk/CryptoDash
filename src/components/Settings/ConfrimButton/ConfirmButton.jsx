@@ -2,7 +2,7 @@ import React from 'react';
 
 import {ConfirmButtonStyled} from './confirmButton.style';
 
-import {AppContext} from '../App/AppProvider';
+import {AppContext} from '../../App/AppProvider';
 
 const ConfirmButton = () => {
   return (
