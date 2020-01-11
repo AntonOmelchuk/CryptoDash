@@ -2,12 +2,18 @@ import React from 'react';
 
 import {ControlButtonElement, Logo, NavbarContainer} from './navbar.style';
 
+import {AppContext} from '../App/AppProvider';
+
 const ControlButton = ({name}) => {
 
     return (
-        <ControlButtonElement>
-            {toProperCase(name)}
-        </ControlButtonElement>
+        <AppContext.Consumer>
+            {({page, setPage}) => (
+                <ControlButtonElement active={page === name} onClick={() => setPage(name)} >
+                    {toProperCase(name)}
+                </ControlButtonElement>
+            )}
+        </AppContext.Consumer>
     )
 };
 
