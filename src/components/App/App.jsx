@@ -4,6 +4,7 @@ import {GlobalStyle} from '../../global.styles';
 import {AppContainer} from './app.style';
 
 import Navbar from '../Navbar/Navbar';
+import WelcomeMessage from '../Settings/index';
 import AppProvider from "./AppProvider";
 
 const App = () => {
@@ -13,7 +14,7 @@ const App = () => {
       <AppContainer>
           <AppProvider>
               <Navbar />
-              <h3>Crypto Dash</h3>
+              <WelcomeMessage />
           </AppProvider>
       </AppContainer>
     </>
