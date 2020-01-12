@@ -3,17 +3,17 @@ import {CoinsGrid} from './coins.style';
 import {AppContext} from '../../App/AppProvider';
 import CoinTile from "./CoinTile";
 
-const getCoinsToDisplay = coinList => {
-  return Object.keys(coinList).slice(0, 100);
+const getCoinsToDisplay = (coinList, topSection) => {
+  return Object.keys(coinList).slice(0, topSection ? 10 : 100);
 };
 
-const Coins = () => {
+const Coins = ({topSection}) => {
   return (
     <AppContext.Consumer>
       {({coinList}) => (
         <CoinsGrid>
-          {getCoinsToDisplay(coinList).map(coinKey => (
-            <CoinTile key={coinKey} coinKey={coinKey}    />
+          {getCoinsToDisplay(coinList, topSection).map((coinKey) => (
+            <CoinTile key={coinKey} coinKey={coinKey} topSection={topSection} />
           ))}
         </CoinsGrid>
       )}

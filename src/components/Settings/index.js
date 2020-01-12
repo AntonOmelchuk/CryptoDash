@@ -9,6 +9,7 @@ export default () => {
   return (
     <Page name='settings'>
       <WelcomeMessage />
+      <Coins topSection />
       <ConfirmButton />
       <Coins />
     </Page>
