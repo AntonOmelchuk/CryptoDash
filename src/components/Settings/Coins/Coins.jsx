@@ -1,17 +1,19 @@
 import React from 'react';
 import {CoinsGrid} from './coins.style';
-import {SelectedTile} from '../../Shared/tile.style';
 import {AppContext} from '../../App/AppProvider';
+import CoinTile from "./CoinTile";
+
+const getCoinsToDisplay = coinList => {
+  return Object.keys(coinList).slice(0, 100);
+};
 
 const Coins = () => {
   return (
     <AppContext.Consumer>
       {({coinList}) => (
         <CoinsGrid>
-          {Object.keys(coinList).map(coinKey => (
-            <div key={coinKey}>
-              <SelectedTile>{coinKey}</SelectedTile>
-            </div>
+          {getCoinsToDisplay(coinList).map(coinKey => (
+            <CoinTile key={coinKey} coinKey={coinKey}    />
           ))}
         </CoinsGrid>
       )}
