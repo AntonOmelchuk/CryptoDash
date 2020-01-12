@@ -3,7 +3,7 @@ import {DeletableTile} from '../../Shared/tile.style';
 
 export const CoinsGrid = styled.div`
   display: grid;
-  grid-template-columns: repeat(5, 1fr);
+  grid-template-columns: repeat(auto-fill, minmax(130px, 1fr));
   grid-gap: 15px;
   margin-top: 40px;
 `;

@@ -12,7 +12,6 @@ const Coins = ({topSection}) => {
     <AppContext.Consumer>
       {({coinList, favorites}) => (
         <CoinsGrid>
-          {console.log(favorites)}
           {getCoinsToDisplay(coinList, topSection, favorites).map(coinKey => (
             <CoinTile key={coinKey} coinKey={coinKey} topSection={topSection} />
           ))}

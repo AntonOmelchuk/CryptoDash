@@ -4,6 +4,7 @@ import Page from '../Shared/Page';
 import WelcomeMessage from './WelcomeMessage';
 import ConfirmButton from './ConfrimButton/ConfirmButton';
 import Coins from "./Coins/Coins";
+import Search from "./Search/Search";
 
 export default () => {
   return (
@@ -11,6 +12,7 @@ export default () => {
       <WelcomeMessage />
       <Coins topSection />
       <ConfirmButton />
+      <Search />
       <Coins />
     </Page>
   );

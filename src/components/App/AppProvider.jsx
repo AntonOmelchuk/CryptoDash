@@ -69,7 +69,6 @@ class AppProvider extends Component {
         }
 
         const {favorites} = cryptoDashData;
-        console.log(favorites);
         return {favorites};
     };
 
