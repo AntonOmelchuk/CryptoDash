@@ -2,6 +2,7 @@ import styled from 'styled-components';
 
 export const ConfirmButtonStyled = styled.div`
   margin: 20px;
+  font-size: 21px;
   cursor: pointer; 
   color: #008000;
 `;

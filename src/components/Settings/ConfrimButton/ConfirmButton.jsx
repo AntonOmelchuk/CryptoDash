@@ -1,6 +1,6 @@
 import React from 'react';
 
-import {ConfirmButtonStyled} from './confirmButton.style';
+import {CenterDiv, ConfirmButtonStyled} from './confirmButton.style';
 
 import {AppContext} from '../../App/AppProvider';
 
@@ -8,9 +8,11 @@ const ConfirmButton = () => {
   return (
     <AppContext.Consumer>
       {({confirmFavorites}) => (
-        <ConfirmButtonStyled onClick={confirmFavorites}>
-          Confirm Favorites
-        </ConfirmButtonStyled>
+          <CenterDiv>
+            <ConfirmButtonStyled onClick={confirmFavorites}>
+              Confirm Favorites
+            </ConfirmButtonStyled>
+          </CenterDiv>
       )}
     </AppContext.Consumer>
   );
