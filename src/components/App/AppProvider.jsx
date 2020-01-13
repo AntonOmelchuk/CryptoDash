@@ -17,11 +17,10 @@ class AppProvider extends Component {
             addCoin: this.addCoin,
             removeCoin: this.removeCoin,
             isInFavorites: this.isInFavorites,
+            setFilteredCoins: this.setFilteredCoins,
             confirmFavorites: this.confirmFavorites
         };
     }
-
-
 
     componentDidMount() {
         this.fetchCoins()
@@ -71,6 +70,8 @@ class AppProvider extends Component {
         const {favorites} = cryptoDashData;
         return {favorites};
     };
+
+    setFilteredCoins = filteredCoins => this.setState({filteredCoins});
 
     setPage = page => this.setState({page});
 
