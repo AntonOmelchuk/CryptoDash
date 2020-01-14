@@ -24,7 +24,10 @@ const handleFilter = _.debounce((inputValue, coinList, setFilteredCoins) => {
 
 const filterCoins = (e, setFilterCoins, coinList) => {
   const inputValue = e.target.value;
-  if(!inputValue) setFilterCoins(null);
+  if(!inputValue) {
+    setFilterCoins(null);
+    return;
+  }
   handleFilter(inputValue, coinList, setFilterCoins);
 };
 

@@ -4,11 +4,11 @@ import {AppContext} from '../../App/AppProvider';
 import CoinTile from './CoinTile';
 
 const getLowerSectionCoins = (filteredCoins, coinList) => {
-  return (filteredCoins && Object.keys(filteredCoins)) || Object.keys(coinList).slice(0, 100)
+  return (filteredCoins && Object.keys(filteredCoins)) || Object.keys(coinList)
 };
 
 const getCoinsToDisplay = (coinList, topSection, favorites, filteredCoins) => {
-  return topSection ? favorites : getLowerSectionCoins(filteredCoins, coinList)
+  return topSection ? favorites : getLowerSectionCoins(filteredCoins, coinList).slice(0, 100)
 };
 
 const Coins = ({topSection}) => {

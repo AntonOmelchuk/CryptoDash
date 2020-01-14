@@ -5,7 +5,7 @@ export default ({name, children}) => {
   return (
     <AppContext>
       {({page}) => {
-        if (page !== name) return null;
+        if(page !== name) return null;
         return <div>{children}</div>;
       }}
     </AppContext>

@@ -7,6 +7,7 @@ import Navbar from '../Navbar/Navbar';
 import Settings from '../Settings';
 import AppProvider from './AppProvider';
 import Content from '../Shared/Content';
+import Dashboard from '../Dashboard/Dashboard';
 
 const App = () => {
   return (
@@ -16,6 +17,7 @@ const App = () => {
         <AppProvider>
           <Navbar />
           <Content>
+            <Dashboard />
             <Settings />
           </Content>
         </AppProvider>

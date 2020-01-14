@@ -1,6 +1,6 @@
 import React, {Component} from 'react';
 import _ from 'lodash';
-const cc = require('cryptocompare');
+const crypto = require('cryptocompare');
 
 export const AppContext = React.createContext();
 
@@ -23,12 +23,34 @@ class AppProvider extends Component {
     }
 
     componentDidMount() {
-        this.fetchCoins()
+        this.fetchCoins();
+        this.setPrices();
     }
 
     fetchCoins = async () => {
-        const coinList = (await cc.coinList()).Data;
+        const coinList = (await crypto.coinList()).Data;
         this.setState({coinList});
+    };
+
+    setPrices = async () => {
+        if(this.state.firstVisit) return;
+        const prices = await this.prices();
+        this.setState({prices})
+    };
+
+    prices = async () => {
+        const data = [];
+
+        for(let i = 0; i < this.state.favorites.length; i ++) {
+            try {
+                const res = await crypto.priceFull(this.state.favorites[i], 'USD');
+                data.push(res)
+            } catch(err) {
+                console.warn('Fetch price error', err)
+            }
+        }
+
+        return data;
     };
 
     addCoin = key => {
@@ -40,7 +62,7 @@ class AppProvider extends Component {
     };
 
     removeCoin = key => {
-        let favorites = [...this.state.favorites];
+        const favorites = [...this.state.favorites];
 
         this.setState({favorites: _.pull(favorites, key)})
     };
