@@ -2,7 +2,7 @@ import React from 'react';
 import {AppContext} from '../../App/AppProvider';
 import {DeletableTile, DisabledTitle, SelectedTile} from '../../Shared/tile.style';
 import {CoinHeaderGridStyled, CoinSymbol, DeleteIcon} from './coins.style';
-import CoinImage from '../../Shared/CoinImage';
+import CoinImage from '../../Shared/CoinImage/CoinImage';
 
 const clickCoinHandler = (coinKey, topSection, addCoin, removeCoin) => {
   return topSection ? () => removeCoin(coinKey) : () => addCoin(coinKey);

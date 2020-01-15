@@ -1,7 +1,7 @@
 import React from 'react';
 import {PriceGrid} from './prices.style';
-import {AppContext} from '../App/AppProvider';
-import PriceTile from './PriceTile/PriceTile';
+import {AppContext} from '../../App/AppProvider';
+import PriceTile from '../PriceTile/PriceTile';
 
 const Prices = () => {
   return (

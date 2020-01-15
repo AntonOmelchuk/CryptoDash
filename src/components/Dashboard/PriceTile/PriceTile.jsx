@@ -26,7 +26,7 @@ const PriceTile = ({sym, data, currentFavorite, setCurrentFavorite}) => (
       <div>{sym}</div>
       <ChangePercent data={data} />
     </CoinHeaderGridStyled>
-    <TickerPrice>${data.PRICE.toFixed(7)}</TickerPrice>
+    <TickerPrice>${data.PRICE.toFixed(2)}</TickerPrice>
   </PriceTileStyled>
 );
 
@@ -38,7 +38,7 @@ const PriceTileCompact = ({sym, data, currentFavorite, setCurrentFavorite}) => (
   >
     <JustifyLeft>{sym}</JustifyLeft>
     <ChangePercent data={data} />
-    <div>${data.PRICE.toFixed(7)}</div>
+    <div>${data.PRICE.toFixed(2)}</div>
   </PriceTileStyled>
 );
 
