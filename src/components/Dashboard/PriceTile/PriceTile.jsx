@@ -7,6 +7,7 @@ import {
   TickerPrice,
 } from './priceTile.style';
 import {CoinHeaderGridStyled} from '../../Settings/Coins/coins.style';
+import {AppContext} from '../../App/AppProvider';
 
 const ChangePercent = ({data}) => (
   <JustifyRight>
@@ -16,8 +17,11 @@ const ChangePercent = ({data}) => (
   </JustifyRight>
 );
 
-const PriceTile = ({sym, data}) => (
-  <PriceTileStyled>
+const PriceTile = ({sym, data, currentFavorite, setCurrentFavorite}) => (
+  <PriceTileStyled
+    currentFavorite={currentFavorite}
+    onClick={() => setCurrentFavorite(sym)}
+  >
     <CoinHeaderGridStyled>
       <div>{sym}</div>
       <ChangePercent data={data} />
@@ -26,8 +30,12 @@ const PriceTile = ({sym, data}) => (
   </PriceTileStyled>
 );
 
-const PriceTileCompact = ({sym, data}) => (
-  <PriceTileStyled compact>
+const PriceTileCompact = ({sym, data, currentFavorite, setCurrentFavorite}) => (
+  <PriceTileStyled
+    compact
+    currentFavorite={currentFavorite}
+    onClick={() => setCurrentFavorite(sym)}
+  >
     <JustifyLeft>{sym}</JustifyLeft>
     <ChangePercent data={data} />
     <div>${data.PRICE.toFixed(7)}</div>
@@ -40,8 +48,15 @@ export default ({price, index}) => {
   const TileClass = index < 5 ? PriceTile : PriceTileCompact;
 
   return (
-    <TileClass data={data} sym={sym}>
-      {sym} {data.PRICE}
-    </TileClass>
+    <AppContext.Consumer>
+      {({currentFavorite, setCurrentFavorite}) => (
+        <TileClass
+          data={data}
+          sym={sym}
+          currentFavorite={currentFavorite === sym}
+          setCurrentFavorite={setCurrentFavorite}
+        />
+      )}
+    </AppContext.Consumer>
   );
 };

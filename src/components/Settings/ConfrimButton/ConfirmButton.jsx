@@ -1,7 +1,5 @@
 import React from 'react';
-
 import {CenterDiv, ConfirmButtonStyled} from './confirmButton.style';
-
 import {AppContext} from '../../App/AppProvider';
 
 const ConfirmButton = () => {

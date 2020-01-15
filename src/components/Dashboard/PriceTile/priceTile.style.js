@@ -1,6 +1,6 @@
 import styled, {css} from 'styled-components';
 import {SelectedTile} from '../../Shared/tile.style';
-import {fontSize3, fontSizeBig} from '../../Shared/styles';
+import {fontSize3, fontSizeBig, greenBoxShadow} from '../../Shared/styles';
 
 export const PriceTileStyled = styled(SelectedTile)`
   ${props =>
@@ -11,6 +11,13 @@ export const PriceTileStyled = styled(SelectedTile)`
       grid-template-columns: repeat(3, 1fr);
       justify-items: right;
       grid-gap: 5px;
+    `}
+ 
+  ${props =>
+    props.currentFavorite &&
+    css`
+      ${greenBoxShadow};
+      pointer-events: none;
     `}
 `;
 

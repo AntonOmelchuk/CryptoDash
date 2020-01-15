@@ -17,8 +17,8 @@ const App = () => {
         <AppProvider>
           <Navbar />
           <Content>
-            <Dashboard />
             <Settings />
+            <Dashboard />
           </Content>
         </AppProvider>
       </AppContainer>
