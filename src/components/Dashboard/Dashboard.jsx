@@ -4,6 +4,7 @@ import Page from '../Shared/Page';
 import Prices from './Price/Prices';
 import CoinSpotlight from './CoinSpoplight/CoinSpotlight';
 import {ChartGrid} from './dashboard.style';
+import PriceChart from "./PriceChart/PriceChart";
 
 const Dashboard = () => {
   return (
@@ -11,7 +12,7 @@ const Dashboard = () => {
       <Prices />
       <ChartGrid>
         <CoinSpotlight />
-        <div>Chart goes here</div>
+        <PriceChart />
       </ChartGrid>
     </Page>
   );
